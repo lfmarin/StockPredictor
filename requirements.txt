@@ -1,0 +1,10 @@
+pandas
+yfinance
+datetime
+prophet
+calendar
+holidays
+pystan
+tensorflow
+keras
+multiprocessing
