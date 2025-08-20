@@ -38,9 +38,9 @@ class StockTrader(object):
 
     def obtain_intraday_data(self, fullsize=True):
         if fullsize:
-            url = f'https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol={self.symbol}&interval=1min&outputsize=full&apikey=OQ6R34VPKLUVCNBF'
+            url = f'https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol={self.symbol}&interval=1min&outputsize=full&apikey=API_KEY'
         else:
-            url = f'https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol={self.symbol}&interval=1min&apikey=OQ6R34VPKLUVCNBF'
+            url = f'https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol={self.symbol}&interval=1min&apikey=API_KEY'
         r = requests.get(url)
         dict_stock = dict(r.json())
         df_intradays = pd.DataFrame.from_dict(dict_stock["Time Series (1min)"],orient="index")
